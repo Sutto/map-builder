@@ -23,7 +23,7 @@ class MapBuilder
     call_function "mapstraction.autoCenterAndZoom"
   end
   
-  def set_centre_and_zoom(zoom, *args)
+  def set_zoom_and_center(zoom, *args)
     point = extract_coordinates(args)
     call_function "var point = new LatLonPoint", point.lat, point.lng
     call_function "mapstraction.setCenterAndZoom", JSVar.new(:point), zoom.to_i
